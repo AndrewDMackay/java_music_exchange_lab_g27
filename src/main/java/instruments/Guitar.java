@@ -1,18 +1,26 @@
 package instruments;
 
-public class Guitar {
+public class Guitar extends Instrument{
 
     InstrumentType instrumentType;
+    private String name;
+    private String type;
+    private String colour;
+    private int buyingPrice;
+    private int sellingPrice;
+    private int numberOfGuitarStrings;
 
-    public Guitar(InstrumentType instrumentType){
-        this.instrumentType = instrumentType;
+
+    public Guitar( InstrumentType instrumentType, String name, String type, String colour, int buyingPrice, int sellingPrice, int numberOfGuitarStrings ){
+        super(instrumentType, name, type, colour, buyingPrice, sellingPrice);
+        this.numberOfGuitarStrings = numberOfGuitarStrings;
     }
 
-    public InstrumentType getInstrumentType() {
-        return this.instrumentType;
+    public int getNumberOfGuitarStrings() {
+        return numberOfGuitarStrings;
     }
 
-    public String getOrchestraSectionFromInstrumentType() {
-        return this.instrumentType.getOrchestraSection();
+    public void setNumberOfGuitarStrings(int numberOfGuitarStrings) {
+        this.numberOfGuitarStrings = numberOfGuitarStrings;
     }
 }
