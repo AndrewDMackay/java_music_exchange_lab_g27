@@ -1,6 +1,8 @@
 package instruments;
 
-public class Guitar extends Instrument{
+import behaviours.IPlay;
+
+public class Guitar extends Instrument implements IPlay {
 
     InstrumentType instrumentType;
     private String name;
@@ -22,5 +24,10 @@ public class Guitar extends Instrument{
 
     public void setNumberOfGuitarStrings(int numberOfGuitarStrings) {
         this.numberOfGuitarStrings = numberOfGuitarStrings;
+    }
+
+    @Override
+    public String play(Instrument instrument) {
+        return "Guitar sounds..";
     }
 }

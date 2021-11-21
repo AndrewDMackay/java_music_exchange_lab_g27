@@ -99,4 +99,9 @@ public class GuitarTest {
     public void canGetNumberOfGuitarStrings(){
         assertEquals(6, guitar.getNumberOfGuitarStrings());
     }
+
+    @Test
+    public void guitarCanBePlayed(){
+        assertEquals("Guitar sounds..", guitar.play(guitar));
+    }
 }

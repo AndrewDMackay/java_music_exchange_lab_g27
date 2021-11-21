@@ -1,7 +1,9 @@
 
 package behaviours;
 
+import instruments.Instrument;
+
 public interface IPlay {
 
-public void play(String playedInstrument);
+public String play(Instrument instrument);
 }

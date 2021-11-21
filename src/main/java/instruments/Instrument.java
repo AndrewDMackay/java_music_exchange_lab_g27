@@ -1,7 +1,9 @@
 
 package instruments;
 
-public abstract class Instrument {
+import behaviours.IPlay;
+
+public abstract class Instrument implements IPlay {
 
     InstrumentType instrumentType;
     private String name;
@@ -69,5 +71,10 @@ public abstract class Instrument {
 
     public void setSellingPrice(int sellingPrice) {
         this.sellingPrice = sellingPrice;
+    }
+
+    @Override
+    public String play(Instrument instrument) {
+        return null;
     }
 }
