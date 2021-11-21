@@ -10,17 +10,11 @@ import static org.junit.Assert.assertEquals;
 public class GuitarTest {
 
     InstrumentType instrumentType;
-    private String name;
-    private String type;
-    private String colour;
-    private int buyingPrice;
-    private int sellingPrice;
-    private int numberOfGuitarStrings;
     Guitar guitar;
 
     @Before
     public void before(){
-        guitar = new Guitar(instrumentType.STRINGS, "Gibson", "electric", "black", 50, 100, 6 );
+        guitar = new Guitar(instrumentType.STRINGS, "Gibson", "electric", "black", 50.0, 100.0, 6 );
     }
 
     @Test
@@ -32,6 +26,11 @@ public class GuitarTest {
     @Test
     public void canGetInstrumentType(){
         assertEquals(instrumentType.STRINGS, guitar.getInstrumentType());
+    }
+
+    @Test
+    public void canGetOrchestraSectionFromInstrumentType(){
+        assertEquals("strings", guitar.getOrchestraSectionFromInstrumentType());
     }
 
     @Test
@@ -69,30 +68,30 @@ public class GuitarTest {
 
     @Test
     public void canSetBuyingPrice(){
-        guitar.setBuyingPrice(100);
-        assertEquals(100, guitar.getBuyingPrice());
+        guitar.setBuyingPrice(100.0);
+        assertEquals(100.0, guitar.getBuyingPrice(), 0.0);
     }
 
     @Test
     public void canGetBuyingPrice(){
-        assertEquals(50, guitar.getBuyingPrice());
+        assertEquals(50.0, guitar.getBuyingPrice(), 0.0);
     }
 
     @Test
     public void canSetSellingPrice(){
-        guitar.setSellingPrice(200);
-        assertEquals(200, guitar.getSellingPrice());
+        guitar.setSellingPrice(200.0);
+        assertEquals(200.0, guitar.getSellingPrice(), 0.0);
     }
 
     @Test
     public void canGetSellingPrice(){
-        assertEquals(100, guitar.getSellingPrice());
+        assertEquals(100.0, guitar.getSellingPrice(), 0.0);
     }
 
     @Test
     public void canSetNumberOfGuitarStrings(){
         guitar.setNumberOfGuitarStrings(8);
-        assertEquals(8, guitar.getNumberOfGuitarStrings());
+        assertEquals(8, guitar.getNumberOfGuitarStrings(), 0.0);
     }
 
     @Test
@@ -103,5 +102,10 @@ public class GuitarTest {
     @Test
     public void guitarCanBePlayed(){
         assertEquals("Guitar sounds..", guitar.play(guitar));
+    }
+
+    @Test
+    public void canCalculateMarkUp(){
+        assertEquals(50.00, guitar.calculateMarkUp(), 0.0);
     }
 }

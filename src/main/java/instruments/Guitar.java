@@ -1,19 +1,20 @@
 package instruments;
 
 import behaviours.IPlay;
+import behaviours.ISell;
 
-public class Guitar extends Instrument implements IPlay {
+public class Guitar extends Instrument implements IPlay, ISell {
 
     InstrumentType instrumentType;
     private String name;
     private String type;
     private String colour;
-    private int buyingPrice;
-    private int sellingPrice;
+    private double buyingPrice;
+    private double sellingPrice;
     private int numberOfGuitarStrings;
 
 
-    public Guitar( InstrumentType instrumentType, String name, String type, String colour, int buyingPrice, int sellingPrice, int numberOfGuitarStrings ){
+    public Guitar( InstrumentType instrumentType, String name, String type, String colour, double buyingPrice, double sellingPrice, int numberOfGuitarStrings ){
         super(instrumentType, name, type, colour, buyingPrice, sellingPrice);
         this.numberOfGuitarStrings = numberOfGuitarStrings;
     }
@@ -26,8 +27,11 @@ public class Guitar extends Instrument implements IPlay {
         this.numberOfGuitarStrings = numberOfGuitarStrings;
     }
 
-    @Override
     public String play(Instrument instrument) {
         return "Guitar sounds..";
+    }
+
+    public double calculateMarkUP() {
+        return this.getSellingPrice() - this.getBuyingPrice();
     }
 }
