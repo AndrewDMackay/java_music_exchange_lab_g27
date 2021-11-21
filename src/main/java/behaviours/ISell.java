@@ -5,6 +5,6 @@ import instruments.Instrument;
 
 public interface ISell {
 
-    public double calculateMarkUP();
+    public double calculateMarkUp();
 }
 

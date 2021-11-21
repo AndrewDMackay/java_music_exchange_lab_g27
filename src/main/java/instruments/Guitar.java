@@ -27,11 +27,13 @@ public class Guitar extends Instrument implements IPlay, ISell {
         this.numberOfGuitarStrings = numberOfGuitarStrings;
     }
 
+    @Override
     public String play(Instrument instrument) {
         return "Guitar sounds..";
     }
 
-    public double calculateMarkUP() {
+    @Override
+    public double calculateMarkUp() {
         return this.getSellingPrice() - this.getBuyingPrice();
     }
 }
