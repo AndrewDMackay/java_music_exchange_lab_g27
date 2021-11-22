@@ -74,7 +74,7 @@ public abstract class Instrument implements IPlay, ISell {
         this.sellingPrice = sellingPrice;
     }
 
-    public String play(Instrument instrument) {
+    public String play(IPlay instrument) {
         return null;
     }
 
